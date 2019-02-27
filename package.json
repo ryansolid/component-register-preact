@@ -1,12 +1,12 @@
 {
   "name": "component-register-preact",
   "description": "A webcomponent wrapper for Preact Components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Ryan Carniato",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ryansolid/component-register-react"
+    "url": "https://github.com/ryansolid/component-register-preact"
   },
   "main": "lib/component-register-preact.js",
   "module": "src/index.js",

@@ -8,7 +8,7 @@ import withPreact from 'component-register-preact'
 import { Component }  from 'preact'
 
 // Normal Preact Component
-class MyComponent extends Component
+class MyComponent extends Component {
   constructor(props) {
     this.state = {greeting: 'Hello'}
   }
@@ -16,6 +16,7 @@ class MyComponent extends Component
   render() {
     return <div>{this.state.greeting + ' ' + this.props.recipient}</div>
   }
+}
 
 compose(
   register('my-component', {recipient: 'John'})
