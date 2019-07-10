@@ -1,7 +1,7 @@
 {
   "name": "component-register-preact",
   "description": "A webcomponent wrapper for Preact Components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Ryan Carniato",
   "license": "MIT",
   "repository": {
@@ -18,8 +18,8 @@
     "preact": "*"
   },
   "devDependencies": {
-    "rollup": "^1.0.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup": "^1.16.7",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "preact": "^8.4.2"
   }
 }

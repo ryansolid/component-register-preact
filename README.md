@@ -4,7 +4,7 @@ This is a [Component Register](https://github.com/ryansolid/component-register) 
 
 ```jsx
 import { register, compose } from 'component-register'
-import withPreact from 'component-register-preact'
+import { customElement } from 'component-register-preact'
 import { Component }  from 'preact'
 
 // Normal Preact Component
@@ -18,10 +18,7 @@ class MyComponent extends Component {
   }
 }
 
-compose(
-  register('my-component', {recipient: 'John'})
-  withReact
-)(MyComponent)
+customElement('my-component', {recipient: 'John'}, MyComponent)
 ```
 
 This library also supports Stateless pure function components.
