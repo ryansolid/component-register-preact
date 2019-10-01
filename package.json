@@ -1,7 +1,7 @@
 {
   "name": "component-register-preact",
   "description": "A webcomponent wrapper for Preact Components",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Ryan Carniato",
   "license": "MIT",
   "repository": {
@@ -9,17 +9,24 @@
     "url": "https://github.com/ryansolid/component-register-preact"
   },
   "main": "lib/component-register-preact.js",
-  "module": "src/index.js",
+  "module": "dist/component-register-preact.js",
+  "types": "types/index.d.ts",
   "scripts": {
-    "prepublishOnly": "rollup -c"
+    "build": "rollup -c && tsc",
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "component-register": "0.6.x",
     "preact": "*"
   },
   "devDependencies": {
-    "rollup": "^1.16.7",
+    "@babel/core": "7.6.2",
+    "@babel/preset-typescript": "7.6.0",
+    "component-register": "0.6.15",
+    "rollup": "^1.22.0",
+    "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "preact": "^8.4.2"
+    "preact": "10.0.0",
+    "typescript": "^3.6.3"
   }
 }
