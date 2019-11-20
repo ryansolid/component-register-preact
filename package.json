@@ -1,7 +1,7 @@
 {
   "name": "component-register-preact",
   "description": "A webcomponent wrapper for Preact Components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Ryan Carniato",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,7 @@
   "devDependencies": {
     "@babel/core": "7.6.2",
     "@babel/preset-typescript": "7.6.0",
-    "component-register": "0.6.15",
+    "component-register": "0.6.18",
     "rollup": "^1.22.0",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-node-resolve": "^5.2.0",
