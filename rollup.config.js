@@ -19,5 +19,5 @@ export default {
       exclude: 'node_modules/**'
     })
   ],
-  external: ['preact', 'component-register'],
+  external: ['preact', 'preact/hooks', 'component-register'],
 };

@@ -1,10 +1,12 @@
 import {
   register,
+  getCurrentElement,
   ComponentType,
   ComponentOptions,
   PropsDefinitionInput
 } from "component-register";
 import { h, render, ComponentType as PreactComponentType } from "preact";
+import { useMemo } from "preact/hooks";
 
 function withPreact<T>(Component: PreactComponentType): ComponentType<T> {
   return (props: T, { element }: ComponentOptions) => {
@@ -44,4 +46,9 @@ function customElement<T>(
   )(withPreact(ComponentType));
 }
 
-export { customElement, withPreact };
+function useHostElement(): HTMLElement {
+  const el = getCurrentElement();
+  return useMemo(() => el, []);
+}
+
+export { customElement, withPreact, useHostElement };
