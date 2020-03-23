@@ -6,12 +6,13 @@ import {
   PropsDefinitionInput
 } from "component-register";
 import { h, render, ComponentType as PreactComponentType } from "preact";
-import { useMemo } from "preact/hooks";
+import { useMemo, useEffect } from "preact/hooks";
 
 function withPreact<T>(Component: PreactComponentType): ComponentType<T> {
   return (props: T, { element }: ComponentOptions) => {
-    let mountEl = element.renderRoot(),
-      preactRoot = render(h(Component, props), mountEl);
+    let comp = h(Component, props),
+      mountEl = element.renderRoot,
+      preactRoot = render(comp, mountEl);
 
     element.addReleaseCallback(() => render("", mountEl, preactRoot as any));
 
@@ -51,4 +52,11 @@ function useHostElement(): HTMLElement {
   return useMemo(() => el, []);
 }
 
-export { customElement, withPreact, useHostElement };
+function useNoShadowDOM(): void {
+  const el = getCurrentElement();
+  useEffect(() => {
+    el.renderRoot = el;
+  }, []);
+}
+
+export { customElement, withPreact, useHostElement, useNoShadowDOM };
