@@ -55,7 +55,7 @@ function useHostElement(): HTMLElement {
 function useNoShadowDOM(): void {
   const el = getCurrentElement();
   useEffect(() => {
-    el.renderRoot = el;
+    Object.defineProperty(el, "renderRoot", { value: el });
   }, []);
 }
 
